@@ -1,0 +1,21 @@
+.bullet_item,
+.bullet_item--image{
+  width: 80px;
+}
+.bullet_item{
+  margin-right: 15px;
+}
+.bullet_item--link{
+  text-decoration: none;
+}
+.bullet_item--tilte{
+  font-size: 12px;
+  text-align: center;
+}
+@media screen and (min-width:760px){
+  .bullet_item
+  .bullet_item--image{
+    width: 80px;
+  }
+
+}
