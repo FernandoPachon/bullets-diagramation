@@ -12,23 +12,24 @@ type Props = {
 
 const Bullet =({src, titleBullet, link}:Props)=>{
 const CSS_HANDLES=[
-  "bullet__item",
-  "bullet__item--title",
-  "bullet__item--image",
-  "bullet__item--link"
+  "bullet_item",
+  "bullet_item--title",
+  "bullet_item--image",
+  "bullet_item--link"
 ]
 const handles = useCssHandles(CSS_HANDLES)
 
   return(
-  <div className={handles.bullet_item}>
-    <Link
-    to={link.url}
-    className={handles["handles.bullet_item--link"]}
-    >
-      <img className={handles["bullet_item--image"]} src={src} alt={titleBullet}/>
-      <p className={handles["bullet_item--title"]}>{titleBullet}</p>
-    </Link>
-  </div>
+    <div className={handles.bullet__item}>
+      <Link to={link.url} className={handles['bullet_item--link']}>
+        <img
+          className={handles['bullet_item--image']}
+          src={src}
+          alt={titleBullet}
+        />
+        <p className={handles['bullet_item--title']}>{titleBullet}</p>
+      </Link>
+    </div>
   )
 }
 
