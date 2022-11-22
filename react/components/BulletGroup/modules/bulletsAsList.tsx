@@ -7,23 +7,22 @@ export const getBulletsAsTSXList = (
   bullets:BulletsSchema
 )=>bullets.map((bullet:any,index)=>{
 
-    return (<Bullet
+  return (
+    <Bullet
     key={index}
-    src={bullet.src}
+    src={bullet.image}
     titleBullet={bullet.titleBullet}
     link={
       bullet.link
-      ?
-      bullet.link
-      :
-      {
-      url:"",
-      atrributeNofollow:false,
-      atrributeTitle:"",
-      opneNewTab:false,
-      newTab:false
+        ? bullet.link
+        : {
+            url: '',
+            attributeNoFollow: false,
+            attributeTitle: '',
+            openNewTab: false,
+            newTab: false,
+          }
     }
-  }
     />
   )})
 
