@@ -20,7 +20,7 @@ const CSS_HANDLES=[
 const handles = useCssHandles(CSS_HANDLES)
 
   return(
-    <div className={handles.bullet__item}>
+    <div className={handles.bullet_item}>
       <Link to={link.url} className={handles['bullet_item--link']}>
         <img
           className={handles['bullet_item--image']}

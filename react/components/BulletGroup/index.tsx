@@ -26,11 +26,13 @@ const BulletGroup = ({
 
   return (
     <ListContextProvider list={newListContextValue}>
-      {isMobile ? (
-        <div className={handles.bullet__container}>{bulletsGroup}</div>
-      ) : (
+      {
+      isMobile
+      ?
+        <div className={handles.bullet_container}>{bulletsGroup}</div>
+       :
         children
-      )}
+      }
     </ListContextProvider>
   )
 }
