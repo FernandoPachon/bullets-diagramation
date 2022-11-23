@@ -1,6 +1,9 @@
+.bullet_item{
+
+}
 .bullet_item--image {
   width: 200px;
-  min-width: 200px;
+  min-width: 125px;
 }
 
 .bullet_item--link {
@@ -22,7 +25,7 @@
 .bullet_container::-webkit-scrollbar-track,
 .bullet_container::-webkit-scrollbar-track {
   background-clip: padding-box;
-  background-color: #E2001A;
+  background-color: #970617;
   border-right: 13px solid transparent;
   border-left: 13px solid transparent
 }
