@@ -22,10 +22,10 @@ Este componente utilizo el [Template custom](http://https://github.com/vtex-apps
    ```json
     
       "vendor": "itgloberspartnercl",
-      "name": "whatsapp-button",
+      "name": "bullets-diagramation",
       "version": "0.0.1",
-      "title": "Whatsapp Button Component",
-      "description": "Botón de componente para whatsApp "
+      "title": "Bullets Diagramation",
+      "description": "Elemento que reenderiza los niveles inferiores de una lista",
      
   ```
   
