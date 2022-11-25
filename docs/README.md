@@ -2,7 +2,11 @@
 
 Este componente utilizo el [Template custom](http://https://github.com/vtex-apps/react-app-template "Template custom") que nos ofrece Vtex U, con esta estructura se han podido crear el componente de Bullets Diagramation
 
-![](https://github.com/FernandoPachon/component-custom-Button-Whastapp/blob/master/assets/botonwhatsapp.png?raw=true)
+### Componente en mobile.
+![](https://github.com/FernandoPachon/component-custom-bullets-diagramation/blob/main/assets/buller-phone.png?raw=true)
+
+### Componenete en desktop.
+![](https://github.com/FernandoPachon/component-custom-bullets-diagramation/blob/main/assets/bullet-desktop.png?raw=true)
 
 # Configuración
 
@@ -44,27 +48,66 @@ Antes de poder renderizar el componente en tu store theme debes ejecutar el coma
 En el archivo `manifest.json` agregaras el componente correspondiente , recuerda que debes colocar tu partner antesdel `.whatsap-button"`
 
  ```json
-    "vtex.product-price": "1.x",
-    "itgloberspartnercl.whatsapp-button": "0.x",
+   "itgloberspartnercl.whatsapp-button": "0.x",
+    "itgloberspartnercl.bullets-diagramation": "0.x",
     
   ```
  ### 6. Llama tu componente
  
- Es recomendable llamar tu componente directamente en el blocks del `store.home`, luego dale las correspondientes propiedades.
-  ```json
- {
-    "whatsapp-button":{
-        "props":{
-          "logo":"assets/img/whatsapp-logo.svg",
-          "phone":"15551234567",
-          "message":"Easy whatsapp",
-          "width":50,
-          "height":50 
-        }
-      } 
-}
- ```
+ Este componente tiene como funcion de tener un estilo similar al de un slider, por lo siguiente donde vas a ubicar el componente crearas las siguientes funciones: 
  
+ *  ### *Paso 1*: *Crea una cadena `flex-layout` .
+ 
+ ```json
+     "flex-layout.row#section_global--bullet": {
+    "children": ["flex-layout.col#section_bullet"]
+  }
+  ```
+ *  ### *Paso 2*: *llamael componente* `list-context.bullet-group`
+ ```json
+     "flex-layout.col#section_bullet": {
+    "children":[
+        "list-context.bullet-group"
+    ]
+  }
+ ```
+ * ### *Paso 3* : *En el `bullets` añadiras el numero de imagenes que tu proyecto requiera.*
+  ```json
+"list-context.bullet-group": {
+    "title": "Lista de bullets",
+    "children": ["slider-layout#bullet-group"],
+    "props": {
+      "blockClass": "slider_custom--bullet",
+      "bullets": [
+        {
+          "image": "assets/img/logo-bretas-400.jpg",
+          "titleBullet": "",
+          "link": {
+            "url": "/"
+          }
+        }
+       ]
+     }
+   },
+    "slider-layout#bullet-group": {
+    "props": {
+      "inifinite": true,
+      "showPaginationDots": "never",
+      "blockClass": "slider_custom--bullet-group",
+      "itemPerPage": {
+        "desktop": "4",
+        "tablet": "4",
+        "mobile": "3"
+      },
+      "autoplay": {
+        "timeout": 3000,
+        "stopOnHover": true
+      },
+      "arrowSize": 40
+    }
+  }
+ ```
+ *La propiedades del slider podras encontrarlas en* [Slider Layout](https://developers.vtex.com/vtex-developer-docs/docs/vtex-slider-layout "Slider Layout")
  ### 7. Linkea tu Store Theme
  
  Como ultimo paso, en la consola de tu trabajo base usa el comando  `vtex ls` con el fin de ver que este correctamente instalado tu componente custom, debes poder visualizar tus componentes instalados.
